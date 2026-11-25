@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171329">
+  <title>COSZI FB AUTO REPLY</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div><div class="brand">COSZI</div><div class="sub">FB AUTO REPLY SYSTEM</div></div>
+      <span class="pill offline" id="status">NOT CONNECTED</span>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">CONTROL DASHBOARD</div>
+      <h1>Auto Reply</h1>
+      <p>Manage your reply rules and automation preferences.</p>
+      <button class="toggle" id="masterToggle" aria-pressed="false">START AUTOMATION</button>
+      <small id="masterHint">Dashboard preview only — browser integration is not connected.</small>
+    </section>
+
+    <section class="grid">
+      <article class="tile"><span class="emoji">💬</span><h2>Auto Reply</h2><p id="replyState">OFF</p></article>
+      <article class="tile"><span class="emoji">⌨️</span><h2>Typing Monitor</h2><p>Preview only</p></article>
+      <article class="tile"><span class="emoji">😂</span><h2>Auto React</h2><p>Rules not connected</p></article>
+      <article class="tile"><span class="emoji">⏱️</span><h2>Reply Delay</h2><p><span id="delayLabel">3</span> seconds</p></article>
+    </section>
+
+    <section class="panel">
+      <h2>Reply settings</h2>
+      <label for="replyText">Default reply message</label>
+      <textarea id="replyText" rows="3">Hello! Salamat sa message mo. Magrereply ako kapag available na ako.</textarea>
+      <div class="field-row">
+        <label for="delay">Reply delay</label><strong><span id="delayValue">3</span>s</strong>
+      </div>
+      <input id="delay" type="range" min="1" max="30" value="3">
+      <label class="check"><input id="cooldown" type="checkbox" checked> Enable 30-second cooldown per conversation</label>
+      <label class="check"><input id="typing" type="checkbox"> Show typing-monitor panel (if browser exposes it)</label>
+    </section>
+
+    <section class="panel">
+      <h2>Auto reaction preference</h2>
+      <p class="muted">Choose a preferred reaction. This saves your setting only; it does not send reactions yet.</p>
+      <div class="reactions" id="reactions">
+        <button class="reaction selected" data-reaction="😂">😂</button>
+        <button class="reaction" data-reaction="❤️">❤️</button>
+        <button class="reaction" data-reaction="👍">👍</button>
+        <button class="reaction" data-reaction="😮">😮</button>
+        <button class="reaction" data-reaction="😢">😢</button>
+        <button class="reaction" data-reaction="😡">😡</button>
+      </div>
+      <p class="muted">Selected: <strong id="selectedReaction">😂</strong></p>
+    </section>
+
+    <section class="panel">
+      <h2>Activity log</h2>
+      <div class="log" id="log">Dashboard initialized. No Facebook connection.</div>
+    </section>
+    <footer>COSZI FB AUTO REPLY · Android-first starter dashboard</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
